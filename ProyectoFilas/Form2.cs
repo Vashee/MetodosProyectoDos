@@ -14,7 +14,7 @@ namespace ProyectoFilas
     {
         public Form2()
         {
-            InitializeComponent();
+            InitializeComponent(); //hola todos
         }
 
         private void Form2_Load(object sender, EventArgs e)
