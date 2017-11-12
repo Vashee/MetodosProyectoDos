@@ -26,9 +26,9 @@ namespace ProyectoFilas
         {
 
             if(lambda.Text.Any(Char.IsNumber) && miu.Text.Any(Char.IsNumber) &&
-                double.Parse(lambda.Text)>=0 && double.Parse(miu.Text)>=0)
+                double.Parse(lambda.Text)>=0 && double.Parse(miu.Text)>=0 &&
+               clientes.Text.Any(Char.IsNumber) && int.Parse(clientes.Text) >= 0) 
             {
-                dataGridView1.Visible = true;
                 dataGridView1.Rows.Clear();
                 string[] rows = new string[20000];
                 string[] leyenda = {"ρ", "Lq", "L", "Wq", "W", "Pn" };
@@ -37,16 +37,42 @@ namespace ProyectoFilas
                 "los clientes en el sistema","Probabilidad de que haya n clientes en el sistema"};
                 double  LN = double.Parse(lambda.Text);
                 double  MN = double.Parse(miu.Text);
+                int Nclientes = int.Parse(clientes.Text);
                 double  Lq = Math.Round((LN * LN) / MN * (MN - LN),4);
                 double  L = Math.Round(LN / (MN - LN),4);
                 double  Wq = Math.Round(LN / MN*(MN - LN),4);
                 double  W = Math.Round(1 / (MN - LN),4);
                 double rho = Math.Round((LN / MN),4);
-                int n = 10;
-                double Pn = Math.Round((1 - rho)*Math.Pow(rho,n),4);
+                string simbol = listBox1.SelectedItem.ToString();
+                
+                double PN = 0;
+                if (simbol == "=")
+                {
+                    PN = Math.Round((1 - rho) * Math.Pow(rho, Nclientes), 4);
+                }
+                if (simbol == ">")
+                {
+                    for (int i = 0; i <= Nclientes; i++)
+                    {
+                        PN =PN+ Math.Round((1 - rho) * Math.Pow(rho, Nclientes), 4);
+
+
+                    }
+                    PN = 1 - PN;
+                }
+                if (simbol == "<")
+                {
+                    for (int i = 0; i <= Nclientes; i++)
+                    {
+                        PN = PN + Math.Round((1 - rho) * Math.Pow(rho, Nclientes), 4);
+
+                    }
+                }
+
                 if (Lq >= 0 && L >= 0 && Wq >= 0 && W >= 0)
                 {
-                    double[] valores = { rho, Lq, L, Wq, W, Pn * 100 };
+                    dataGridView1.Visible = true;
+                    double[] valores = { rho, Lq, L, Wq, W, PN };
                     for (int i = 0; i < leyenda.Length; i++)
                     {
 
@@ -96,6 +122,16 @@ namespace ProyectoFilas
             this.Hide();
             Form2 f2 = new Form2();
             f2.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
