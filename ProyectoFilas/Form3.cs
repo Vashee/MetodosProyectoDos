@@ -77,12 +77,14 @@ namespace ProyectoFilas
             if (lambda.Text.Any(Char.IsNumber) && miu.Text.Any(Char.IsNumber) &&
                double.Parse(lambda.Text) >= 0 && double.Parse(miu.Text) >= 0 &&
                servidores.Text.Any(Char.IsNumber) && int.Parse(servidores.Text) >= 0 &&
-               clientes.Text.Any(Char.IsNumber) && int.Parse(clientes.Text) >= 0) 
+               clientes.Text.Any(Char.IsNumber) && int.Parse(clientes.Text) >= 0)
+                //&&double.Parse(lambda.Text) >= double.Parse(miu.Text))
+               
        
             {
                 dataGridView1.Rows.Clear();
                 string[] rows = new string[20000];
-                string[] leyenda = { "ρ", "Lq", "L", "P0" ,"PN"};
+                string[] leyenda = { "ρ", "Lq", "L", "P0" ,"PN","Wq","W"};
                 string[] des = {"Factor de utilización","Clientes esperados en el sistema",
                 "Clientes en el sistema","Tiempo esperado de los clientes en la cola","Tiempo esperado de estancia de" +
                 "los clientes en el sistema","Probabilidad de que haya n clientes en el sistema"};
@@ -122,21 +124,19 @@ namespace ProyectoFilas
                     }
                 }
 
-                    //double Wq = Math.Round(LN / MN * (MN - LN), 4);
-                    //double W = Math.Round(1 / (MN - LN), 4);
-                    //int n = 10;
-                    //double Pn = Math.Round((1 - rho) * Math.Pow(rho, n), 4);
+                    double Wq = Math.Round((Lq/LN), 4);
+                    double W = Math.Round(Wq+(1/MN), 4);
                     if (Lq >= 0 && L >= 0)
                 {
                     dataGridView1.Visible = true;
 
-                    double[] valores = { rho, Lq, L,P0val,PN};
+                    double[] valores = { rho, Lq, L,P0val,PN,Wq,W};
                     for (int i = 0; i < leyenda.Length; i++)
                     {
 
                         rows[0] = leyenda[i];
                         rows[1] = valores[i].ToString();
-                        rows[2] = des[i];
+                       // rows[2] = des[i];
                         dataGridView1.Rows.Add(rows);
                     }
                 }
@@ -150,7 +150,7 @@ namespace ProyectoFilas
             }
             else
             {
-                MessageBox.Show("Favor de ingresar valores númericos números positivos");
+                MessageBox.Show("Favor de ingresar valores númericos y positivos");
 
             }
         }

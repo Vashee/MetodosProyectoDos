@@ -27,7 +27,8 @@ namespace ProyectoFilas
 
             if(lambda.Text.Any(Char.IsNumber) && miu.Text.Any(Char.IsNumber) &&
                 double.Parse(lambda.Text)>=0 && double.Parse(miu.Text)>=0 &&
-               clientes.Text.Any(Char.IsNumber) && int.Parse(clientes.Text) >= 0) 
+               clientes.Text.Any(Char.IsNumber) && int.Parse(clientes.Text) >= 0)
+              // &&double.Parse(lambda.Text) >= double.Parse(miu.Text))
             {
                 dataGridView1.Rows.Clear();
                 string[] rows = new string[20000];
@@ -69,7 +70,7 @@ namespace ProyectoFilas
                     }
                 }
 
-                if (Lq >= 0 && L >= 0 && Wq >= 0 && W >= 0)
+                if (Lq >= 0 && L >= 0)
                 {
                     dataGridView1.Visible = true;
                     double[] valores = { rho, Lq, L, Wq, W, PN };
@@ -92,7 +93,7 @@ namespace ProyectoFilas
             }
             else
             {
-                MessageBox.Show("Favor de ingresar valores númericos números positivos");
+                MessageBox.Show("Favor de ingresar valores númericos y  positivos");
 
             }
         }
