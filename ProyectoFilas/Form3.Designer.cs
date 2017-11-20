@@ -78,11 +78,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(451, 162);
+            this.dataGridView1.Location = new System.Drawing.Point(338, 132);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(403, 243);
+            this.dataGridView1.Size = new System.Drawing.Size(302, 197);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.Visible = false;
             // 
@@ -106,9 +107,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Bell MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(144, 452);
+            this.button2.Location = new System.Drawing.Point(108, 367);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 68);
+            this.button2.Size = new System.Drawing.Size(98, 55);
             this.button2.TabIndex = 9;
             this.button2.Text = "Regresar";
             this.button2.UseVisualStyleBackColor = false;
@@ -122,9 +124,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bell MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(14, 452);
+            this.button1.Location = new System.Drawing.Point(10, 367);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 68);
+            this.button1.Size = new System.Drawing.Size(90, 55);
             this.button1.TabIndex = 7;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = false;
@@ -145,8 +148,9 @@
             this.panel1.Controls.Add(this.lambda);
             this.panel1.Controls.Add(this.miu);
             this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 545);
+            this.panel1.Size = new System.Drawing.Size(214, 443);
             this.panel1.TabIndex = 10;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -155,14 +159,15 @@
             this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(159)))), ((int)(((byte)(201)))));
             this.listBox1.Font = new System.Drawing.Font("Bell MT", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 21;
+            this.listBox1.ItemHeight = 17;
             this.listBox1.Items.AddRange(new object[] {
             ">",
             "<",
             "="});
-            this.listBox1.Location = new System.Drawing.Point(25, 320);
+            this.listBox1.Location = new System.Drawing.Point(19, 260);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(43, 67);
+            this.listBox1.Size = new System.Drawing.Size(33, 55);
             this.listBox1.TabIndex = 17;
             // 
             // label4
@@ -171,17 +176,19 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Bell MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(3, 286);
+            this.label4.Location = new System.Drawing.Point(2, 232);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(235, 31);
+            this.label4.Size = new System.Drawing.Size(185, 25);
             this.label4.TabIndex = 15;
             this.label4.Text = "Número de clientes";
             // 
             // clientes
             // 
-            this.clientes.Location = new System.Drawing.Point(74, 347);
+            this.clientes.Location = new System.Drawing.Point(56, 282);
+            this.clientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.clientes.Name = "clientes";
-            this.clientes.Size = new System.Drawing.Size(151, 22);
+            this.clientes.Size = new System.Drawing.Size(114, 20);
             this.clientes.TabIndex = 12;
             // 
             // label3
@@ -190,18 +197,22 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bell MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(7, 150);
+            this.label3.Location = new System.Drawing.Point(5, 122);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(229, 27);
+            this.label3.Size = new System.Drawing.Size(184, 22);
             this.label3.TabIndex = 11;
             this.label3.Text = "Número de servidores";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // servidores
             // 
-            this.servidores.Location = new System.Drawing.Point(12, 180);
+            this.servidores.Location = new System.Drawing.Point(9, 146);
+            this.servidores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.servidores.Name = "servidores";
-            this.servidores.Size = new System.Drawing.Size(250, 22);
+            this.servidores.Size = new System.Drawing.Size(188, 20);
             this.servidores.TabIndex = 10;
+            this.servidores.TextChanged += new System.EventHandler(this.servidores_TextChanged);
             // 
             // label2
             // 
@@ -209,9 +220,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bell MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(9, 77);
+            this.label2.Location = new System.Drawing.Point(7, 63);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(257, 27);
+            this.label2.Size = new System.Drawing.Size(205, 22);
             this.label2.TabIndex = 8;
             this.label2.Text = "Tasa Media De Servicios";
             // 
@@ -221,34 +233,38 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bell MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Location = new System.Drawing.Point(7, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 27);
+            this.label1.Size = new System.Drawing.Size(203, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tasa Media De Llegadas";
             // 
             // lambda
             // 
-            this.lambda.Location = new System.Drawing.Point(14, 39);
+            this.lambda.Location = new System.Drawing.Point(10, 32);
+            this.lambda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lambda.Name = "lambda";
-            this.lambda.Size = new System.Drawing.Size(250, 22);
+            this.lambda.Size = new System.Drawing.Size(188, 20);
             this.lambda.TabIndex = 3;
             // 
             // miu
             // 
-            this.miu.Location = new System.Drawing.Point(14, 107);
+            this.miu.Location = new System.Drawing.Point(10, 87);
+            this.miu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.miu.Name = "miu";
-            this.miu.Size = new System.Drawing.Size(250, 22);
+            this.miu.Size = new System.Drawing.Size(188, 20);
             this.miu.TabIndex = 4;
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1045, 532);
+            this.ClientSize = new System.Drawing.Size(784, 432);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";

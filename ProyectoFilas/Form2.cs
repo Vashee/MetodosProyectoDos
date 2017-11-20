@@ -31,7 +31,9 @@ namespace ProyectoFilas
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form f5 = new Form5();
+            f5.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -46,6 +48,11 @@ namespace ProyectoFilas
             this.Hide();
             Form1 f1 = new Form1();
             f1.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
