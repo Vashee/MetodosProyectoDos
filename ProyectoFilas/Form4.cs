@@ -52,11 +52,12 @@ namespace ProyectoFilas
             if(lambda.Text.Any(Char.IsNumber) && miu.Text.Any(Char.IsNumber) &&
                 double.Parse(lambda.Text)>=0 && double.Parse(miu.Text)>=0 &&
                clientes.Text.Any(Char.IsNumber) && int.Parse(clientes.Text) >= 0 &&
-               desviacionS.Text.Any(Char.IsNumber) && double.Parse(miu.Text) >= 0
-               && listBox1.SelectedItem != null)
+               desviacionS.Text.Any(Char.IsNumber) && double.Parse(desviacionS.Text) >= 0
+               && listBox1.SelectedItem != null && distribuciones.SelectedItem != null)
             {
                 dataGridView1.Rows.Clear();
                 int Nclientes = int.Parse(clientes.Text);
+                string tipoDist = distribuciones.SelectedItem.ToString();
                 string simbol = listBox1.SelectedItem.ToString();
                 string simboMsg = "";
                 if (simbol == ">")
@@ -80,18 +81,33 @@ namespace ProyectoFilas
                 double  LN = double.Parse(lambda.Text);
                 double  MN = double.Parse(miu.Text);
                 double DS = double.Parse(desviacionS.Text);
-                
-
-                double sigmaDS = Math.Round(DS / 60, 4);
                 double rho = Math.Round((LN / MN), 4);
+                double sigmaDS = 0.0;
+                double L = 0.0;
+                double Lq = 0.0;
+                double Wq = 0.0;
+                double W = 0.0;
+
+                if (tipoDist == "Dist. Erlang")
+                {
+                    sigmaDS = Math.Round((1 / Math.Sqrt(DS)) * (1 / MN), 4);
+                    Lq = Math.Round((((LN * LN) * (sigmaDS * sigmaDS)) + (rho * rho)) / (2 * (1 - rho)), 4);
+                    Wq = Math.Round((Lq / LN) * 60, 4);
+                    W = Math.Round(((Lq / LN) + (1 / MN)) * 60, 4);
+                    L = Math.Round(LN * W, 4);
+                }
+                else if (tipoDist == "Dist. General")
+                {
+                    sigmaDS = Math.Round(DS / 60, 4);
+                    Lq = Math.Round((((LN * LN) * (sigmaDS * sigmaDS)) + (rho * rho)) / (2 * (1 - rho)), 4);
+                    L = Math.Round(rho + Lq, 4);
+                    Wq = Math.Round((Lq / LN) * 60, 4);
+                    W = Math.Round(((Lq / LN) + (1 / MN)) * 60, 4);
+                }
+                
                 double P0 = Math.Round(1 - rho, 4);
-                double  Lq = Math.Round((((LN * LN)*(sigmaDS * sigmaDS)) + (rho * rho)) / (2 * (1 - rho)), 4);
-                double  L = Math.Round(rho + Lq, 4);
-                double  Wq = Math.Round((Lq / LN) * 60, 4);
-                double  W = Math.Round(((Lq / LN) + (1 / MN)) * 60,4);
-                
-                
                 double PN = 0;
+
                 if (simbol == "=")
                 {
                     PN = Math.Round(P0 * Math.Pow(rho, Nclientes), 4);
@@ -141,6 +157,10 @@ namespace ProyectoFilas
             {
                 MessageBox.Show("Favor de ingresar valores númericos y positivos");
             }
+            if (distribuciones.SelectedItem == null)
+            {
+                MessageBox.Show("Favor de escoger un tipo de distribución");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -156,6 +176,11 @@ namespace ProyectoFilas
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void distribuciones_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
