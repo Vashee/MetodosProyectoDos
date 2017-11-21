@@ -55,7 +55,7 @@ namespace ProyectoFilas
                 {
                     for (int i = 0; i <= Nclientes; i++)
                     {
-                        PN =PN+ Math.Round((1 - rho) * Math.Pow(rho, Nclientes), 4);
+                        PN =PN+ Math.Round((1 - rho) * Math.Pow(rho, i), 4);
 
 
                     }
@@ -65,7 +65,7 @@ namespace ProyectoFilas
                 {
                     for (int i = 0; i <= Nclientes; i++)
                     {
-                        PN = PN + Math.Round((1 - rho) * Math.Pow(rho, Nclientes), 4);
+                        PN = PN + Math.Round((1 - rho) * Math.Pow(rho, i), 4);
 
                     }
                 }

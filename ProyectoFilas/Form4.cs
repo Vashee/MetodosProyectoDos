@@ -116,15 +116,15 @@ namespace ProyectoFilas
                 {
                     for (int i = 0; i <= Nclientes; i++)
                     {
-                        PN += Math.Round(P0 * Math.Pow(rho, Nclientes), 4);
+                        PN += Math.Round(P0 * Math.Pow(rho, i), 4);
                     }
                     PN = 1 - PN;
                 }
                 if (simbol == "<")
                 {
-                    for (int i = 1; i <= Nclientes; i++)
+                    for (int i = 0; i <= Nclientes; i++)
                     {
-                        PN = PN + Math.Round(P0 * Math.Pow(rho, Nclientes), 4);
+                        PN = PN + Math.Round(P0 * Math.Pow(rho, i), 4);
 
                     }
                 }
