@@ -139,26 +139,29 @@ namespace ProyectoFilas
                 }
 
                 double LE = LN*(1-PN);
-                double Wq = Math.Round((Lq / LE), 4);
-                double W = Math.Round(Wq + (1 / MN), 4);
+                double Wq = Math.Round((Lq / LE), 4)*60;
+                double W = Math.Round(Wq + (1 / MN), 4)*60;
                 double L = Math.Round(LE * W, 4);
                 if (Lq >= 0 && L >= 0)
                 {
                     dataGridView1.Visible = true;
-                    string[] leyenda = { "ρ", "P0", "Pn", "Lq", "Le", "Wq", "W", "L" };
+                    string[] leyenda = { "ρ", "P0", "Pn" + simbol + Nclientes, "Lq", "Le", "Wq", "W", "L" };
                     double[] valores = { rho, P0val, PN, Lq, LE, Wq, W, L };
                     string[] des = {"Factor de utilización","Probabilidad de que haya 0 clientes en el sistema", "Probabilidad de que haya n clientes en el sistema",
                         "Número esperado de clientes en la cola", "Tasa de arribos efectiva", "Tiempo esperado de los clientes en la cola",
                         "Tiempo esperado de estancia de los clientes en el sistema", "Número esperado de clientes en el sistema"
                         };
+                    String[] unidades = { "","","", " clientes",""," minutos", " minutos", " clientes" };
+
 
                     for (int i = 0; i < leyenda.Length; i++)
                     {
 
-                        rows[0] = des[i];
-                        rows[1] = leyenda[i];
-                        rows[2] = valores[i].ToString();
-                        
+                        rows[0] = leyenda[i];
+                        rows[1] = valores[i].ToString()+unidades[i];
+                        rows[2] = des[i];
+
+
                         dataGridView1.Rows.Add(rows);
                     }
                 }
@@ -195,6 +198,11 @@ namespace ProyectoFilas
         }
 
         private void kMax_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
         {
 
         }

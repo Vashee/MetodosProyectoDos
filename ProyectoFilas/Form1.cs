@@ -33,17 +33,16 @@ namespace ProyectoFilas
             {
                 dataGridView1.Rows.Clear();
                 string[] rows = new string[20000];
-                string[] leyenda = {"ρ", "Lq", "L", "Wq", "W", "Pn" };
                 string[] des = {"Factor de utilización","Clientes esperados en el sistema",
                 "Clientes en el sistema","Tiempo esperado de los clientes en la cola","Tiempo esperado de estancia de" +
-                "los clientes en el sistema","Probabilidad de que haya n clientes en el sistema"};
+                "los clientes en el sistema", "Probabilidad de que haya n clientes en el sistema" };
                 double  LN = double.Parse(lambda.Text);
                 double  MN = double.Parse(miu.Text);
                 int Nclientes = int.Parse(clientes.Text);
                 double  Lq = Math.Round((LN * LN) / MN * (MN - LN),4);
                 double  L = Math.Round(LN / (MN - LN),4);
-                double  Wq = Math.Round(LN / MN*(MN - LN),4);
-                double  W = Math.Round(1 / (MN - LN),4);
+                double  Wq = Math.Round(LN / MN*(MN - LN),4)*60;
+                double  W = Math.Round(1 / (MN - LN),4)*60;
                 double rho = Math.Round((LN / MN),4);
                 string simbol = listBox1.SelectedItem.ToString();
                 
@@ -74,12 +73,14 @@ namespace ProyectoFilas
                 if (Lq >= 0 && L >= 0)
                 {
                     dataGridView1.Visible = true;
+                    string[] leyenda = { "ρ", "Lq", "L", "Wq", "W", "Pn" + simbol + Nclientes };
                     double[] valores = { rho, Lq, L, Wq, W, PN };
+                    String[] unidades = { "", " clientes", " clientes", " minutos", " minutos", "" };
                     for (int i = 0; i < leyenda.Length; i++)
                     {
 
                         rows[0] = leyenda[i];
-                        rows[1] = valores[i].ToString();
+                        rows[1] = valores[i].ToString()+unidades[i];
                         rows[2] = des[i];
                         dataGridView1.Rows.Add(rows);
                     }

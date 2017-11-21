@@ -133,10 +133,12 @@ namespace ProyectoFilas
                 {
                     dataGridView1.Visible = true;
                     double[] valores = { rho, sigmaDS, Lq, L, Wq, W, P0, PN };
+                    String[] unidades = { "", "", " clientes", " clientes", " minutos", " minutos", "","" };
+
                     for (int i = 0; i < leyenda.Length; i++)
                     {
                         rows[0] = leyenda[i];
-                        rows[1] = valores[i].ToString();
+                        rows[1] = valores[i].ToString()+unidades[i];
                         rows[2] = des[i];
                         dataGridView1.Rows.Add(rows);
                     }
