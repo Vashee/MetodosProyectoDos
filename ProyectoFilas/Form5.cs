@@ -92,7 +92,8 @@ namespace ProyectoFilas
             if (lambda.Text.Any(Char.IsNumber) && miu.Text.Any(Char.IsNumber) &&
                double.Parse(lambda.Text) >= 0 && double.Parse(miu.Text) >= 0 &&
                servidores.Text.Any(Char.IsNumber) && int.Parse(servidores.Text) >= 0 &&
-               clientes.Text.Any(Char.IsNumber) && int.Parse(clientes.Text) >= 0)
+               clientes.Text.Any(Char.IsNumber) && int.Parse(clientes.Text) >= 0
+               && listBox1.SelectedItem != null)
             //&&double.Parse(lambda.Text) >= double.Parse(miu.Text))
             {
                 dataGridView1.Rows.Clear();
@@ -166,9 +167,13 @@ namespace ProyectoFilas
                     MessageBox.Show("Los resultados tienen valores negativos, favor de ingresar otros valores");
                 }
             }
+            else if (listBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Favor de escoger uno de los símbolos: >, < o =");
+            }
             else
             {
-
+                MessageBox.Show("Favor de ingresar valores númericos y positivos");
             }
         }
 
