@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoFilas
 {
-    public partial class Form4 : Form
+    public partial class MG1 : Form
     {
-        public Form4()
+        public MG1()
         {
             InitializeComponent();
         }

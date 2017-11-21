@@ -25,7 +25,7 @@ namespace ProyectoFilas
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form4 f4 = new Form4();
+            MG1 f4 = new MG1();
             f4.Show();
         }
 
