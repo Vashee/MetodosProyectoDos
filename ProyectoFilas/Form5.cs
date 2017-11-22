@@ -33,14 +33,11 @@ namespace ProyectoFilas
             double sec3 = 0;
             double sec2, ifact, sfact;
             sfact = factorial(s);
-            Console.WriteLine(sfact);
 
             for (int i = 0; i <= s; i++)
             {
                 ifact = factorial(i);
-                Console.WriteLine(i);
-                Console.WriteLine(ifact);
-                sec1 = sec1 + (Math.Pow((LN / MN), i)) / (ifact);
+                sec1 = sec1 + ((Math.Pow((LN / MN), i)) / (ifact));
             }
 
             for(int n = s+1; n <= k; n++)
@@ -48,7 +45,6 @@ namespace ProyectoFilas
                 sec3 = sec3 + (Math.Pow((LN / (s * MN)), n - s));
             }
             sec2 = (Math.Pow((LN / MN), s)) / (sfact);
-            //sec3 = 1 / (1 - (LN / (s * MN)));
             P0 = 1 / (sec1 + sec2 * sec3);
             return P0;
         }
@@ -137,11 +133,12 @@ namespace ProyectoFilas
 
                     }
                 }
+                double pk = Math.Round(Pn(K, S, LN, MN, P0val, K), 4);
 
-                double LE = LN*(1-PN);
+                double LE = LN*(1-pk);
                 double Wq = Math.Round((Lq / LE), 4)*60;
-                double W = Math.Round(Wq + (1 / MN), 4)*60;
-                double L = Math.Round(LE * W, 4);
+                double W = Math.Round((Lq / LE) + (1 / MN), 4)*60;
+                double L = Math.Round(LE * ((Lq / LE) + (1 / MN)), 4);
                 if (Lq >= 0 && L >= 0)
                 {
                     dataGridView1.Visible = true;

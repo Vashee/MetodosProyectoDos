@@ -43,13 +43,10 @@ namespace ProyectoFilas
             double P0 = 0;
             double sec1 = 0, sec2, sec3, ifact, sfact;
             sfact = factorial(s);
-            Console.WriteLine(sfact);
 
             for (int i = 0; i <= s-1; i++)
             {
                 ifact = factorial(i);
-                Console.WriteLine(i);
-                Console.WriteLine(ifact);
                 sec1 = sec1+(Math.Pow((LN / MN), i)) / (ifact);
             }
             sec2 = (Math.Pow((LN / MN), s)) / (sfact);
@@ -126,7 +123,7 @@ namespace ProyectoFilas
                 }
 
                     double Wq = Math.Round((Lq/LN), 4)*60;
-                    double W = Math.Round(Wq+(1/MN), 4)*60;
+                    double W = Math.Round((Lq/LN)+(1/MN), 4)*60;
                     if (Lq >= 0 && L >= 0)
                 {
                     dataGridView1.Visible = true;

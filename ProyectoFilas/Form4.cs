@@ -94,7 +94,7 @@ namespace ProyectoFilas
                     Lq = Math.Round((((LN * LN) * (sigmaDS * sigmaDS)) + (rho * rho)) / (2 * (1 - rho)), 4);
                     Wq = Math.Round((Lq / LN) * 60, 4);
                     W = Math.Round(((Lq / LN) + (1 / MN)) * 60, 4);
-                    L = Math.Round(LN * W, 4);
+                    L = Math.Round(LN * ((Lq / LN) + (1 / MN)), 4);
                 }
                 else if (tipoDist == "Dist. General")
                 {

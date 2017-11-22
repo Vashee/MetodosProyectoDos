@@ -41,7 +41,7 @@ namespace ProyectoFilas
                 int Nclientes = int.Parse(clientes.Text);
                 double  Lq = Math.Round((LN * LN) / MN * (MN - LN),4);
                 double  L = Math.Round(LN / (MN - LN),4);
-                double  Wq = Math.Round(LN / MN*(MN - LN),4)*60;
+                double  Wq = Math.Round(LN / (MN*(MN - LN)),4)*60;
                 double  W = Math.Round(1 / (MN - LN),4)*60;
                 double rho = Math.Round((LN / MN),4);
                 string simbol = listBox1.SelectedItem.ToString();
