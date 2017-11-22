@@ -15,6 +15,7 @@ namespace ProyectoFilas
         public MG1()
         {
             InitializeComponent();
+            kL.Hide();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -49,8 +50,8 @@ namespace ProyectoFilas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(lambda.Text.Any(Char.IsNumber) && miu.Text.Any(Char.IsNumber) &&
-                double.Parse(lambda.Text)>=0 && double.Parse(miu.Text)>=0 &&
+            if (lambda.Text.Any(Char.IsNumber) && miu.Text.Any(Char.IsNumber) &&
+                double.Parse(lambda.Text) >= 0 && double.Parse(miu.Text) >= 0 &&
                clientes.Text.Any(Char.IsNumber) && int.Parse(clientes.Text) >= 0 &&
                desviacionS.Text.Any(Char.IsNumber) && double.Parse(desviacionS.Text) >= 0
                && listBox1.SelectedItem != null && distribuciones.SelectedItem != null)
@@ -98,7 +99,7 @@ namespace ProyectoFilas
                 }
                 else if (tipoDist == "Dist. General")
                 {
-                    sigmaDS = Math.Round(DS / 60, 4);
+                    sigmaDS = Math.Round(Math.Sqrt(DS) / 60, 4);
                     Lq = Math.Round((((LN * LN) * (sigmaDS * sigmaDS)) + (rho * rho)) / (2 * (1 - rho)), 4);
                     L = Math.Round(rho + Lq, 4);
                     Wq = Math.Round((Lq / LN) * 60, 4);
@@ -177,12 +178,35 @@ namespace ProyectoFilas
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void distribuciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (distribuciones.SelectedItem.ToString() == "Dist. Erlang") {
+                sigmaL.Hide();
+                minutosL.Hide();
+                kL.Show();
+            }else if (distribuciones.SelectedItem.ToString() == "Dist. General"){
+                sigmaL.Show();
+                minutosL.Show();
+                kL.Hide();
+            }
+        }
+
+        private void sigmaL_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void distribuciones_SelectedIndexChanged(object sender, EventArgs e)
+        private void kL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MG1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void minutosL_Click(object sender, EventArgs e)
         {
 
         }
