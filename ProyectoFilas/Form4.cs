@@ -70,7 +70,7 @@ namespace ProyectoFilas
                     simboMsg = "a lo mucho ";
                 }
                 string[] rows = new string[20000];
-                string[] leyenda = {"ρ", "σ", "Lq", "L", "Wq", "W", "P0","Pn" + simbol + Nclientes };
+                string[] leyenda = {"ρ", "σ", "Lq", "L", "Wq", "W", "P0","Pn" + simbol + Nclientes,"CT" };
                 string[] des = {"Factor de utilización",
                 "Desviacion estándar",
                 "Clientes esperados en la cola",
@@ -78,7 +78,8 @@ namespace ProyectoFilas
                 "Tiempo esperado (en minutos)" + "\r de los clientes en la cola",
                 "Tiempo esperado (en minutos)" + "\r de los clientes en el sistema",
                 "Probabilidad de que haya cero clientes en el sistema",
-                "Probabilidad de que haya " + simboMsg + Nclientes + " clientes en el sistema" };
+                "Probabilidad de que haya " + simboMsg + Nclientes + " clientes en el sistema",
+                "Costo total del servicio"};
                 double  LN = double.Parse(lambda.Text);
                 double  MN = double.Parse(miu.Text);
                 double DS = double.Parse(desviacionS.Text);
@@ -132,9 +133,10 @@ namespace ProyectoFilas
 
                 if (Lq >= 0 && L >= 0)
                 {
+                    double ctotal = Lq * double.Parse(costocliente.Text)  * double.Parse(costoservicio.Text);
                     dataGridView1.Visible = true;
-                    double[] valores = { rho, sigmaDS, Lq, L, Wq, W, P0, PN };
-                    String[] unidades = { "", "", " clientes", " clientes", " minutos", " minutos", "","" };
+                    double[] valores = { rho, sigmaDS, Lq, L, Wq, W, P0, PN,ctotal };
+                    String[] unidades = { "", "", " clientes", " clientes", " minutos", " minutos", "",""," dolares"};
 
                     for (int i = 0; i < leyenda.Length; i++)
                     {
@@ -207,6 +209,26 @@ namespace ProyectoFilas
         }
 
         private void minutosL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void costocliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void costoservicio_TextChanged(object sender, EventArgs e)
         {
 
         }

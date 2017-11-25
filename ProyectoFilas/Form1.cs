@@ -35,7 +35,7 @@ namespace ProyectoFilas
                 string[] rows = new string[20000];
                 string[] des = {"Factor de utilización","Clientes esperados en el sistema",
                 "Clientes en el sistema","Tiempo esperado de los clientes en la cola","Tiempo esperado de estancia de" +
-                "los clientes en el sistema", "Probabilidad de que haya n clientes en el sistema" };
+                "los clientes en el sistema", "Probabilidad de que haya n clientes en el sistema","Costo total del servicio"};
                 double  LN = double.Parse(lambda.Text);
                 double  MN = double.Parse(miu.Text);
                 int Nclientes = int.Parse(clientes.Text);
@@ -72,10 +72,11 @@ namespace ProyectoFilas
 
                 if (Lq >= 0 && L >= 0)
                 {
+                    double ctotal =Lq* double.Parse(costocliente.Text) + double.Parse(costoservicio.Text);
                     dataGridView1.Visible = true;
-                    string[] leyenda = { "ρ", "Lq", "L", "Wq", "W", "Pn" + simbol + Nclientes };
-                    double[] valores = { rho, Lq, L, Wq, W, PN };
-                    String[] unidades = { "", " clientes", " clientes", " minutos", " minutos", "" };
+                    string[] leyenda = { "ρ", "Lq", "L", "Wq", "W", "Pn" + simbol + Nclientes,"CT" };
+                    double[] valores = { rho, Lq, L, Wq, W, PN,ctotal};
+                    String[] unidades = { "", " clientes", " clientes", " minutos", " minutos", ""," dolares" };
                     for (int i = 0; i < leyenda.Length; i++)
                     {
 
@@ -136,6 +137,16 @@ namespace ProyectoFilas
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
