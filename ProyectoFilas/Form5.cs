@@ -144,7 +144,7 @@ namespace ProyectoFilas
                 double L = Math.Round(LE * ((Lq / LE) + (1 / MN)), 4);
                 if (Lq >= 0 && L >= 0)
                 {
-                    double ctotal = Lq * double.Parse(costocliente.Text) + S * double.Parse(costoservicio.Text);
+                    double ctotal = (Lq * double.Parse(costocliente.Text)) + (S * double.Parse(costoservicio.Text));
                     dataGridView1.Visible = true;
                     string[] leyenda = { "ρ", "P0", "Pn" + simbol + Nclientes, "Lq", "Le", "Wq", "W", "L","CT" };
                     double[] valores = { rho, P0val, PN, Lq, LE, Wq, W, L,ctotal };

@@ -131,7 +131,7 @@ namespace ProyectoFilas
                     if (Lq >= 0 && L >= 0)
                 {
                     dataGridView1.Visible = true;
-                    double ctotal = Lq * double.Parse(costocliente.Text) + S*double.Parse(costoservicio.Text);
+                    double ctotal = (Lq * double.Parse(costocliente.Text)) + (S*double.Parse(costoservicio.Text));
                     string[] leyenda = { "ρ", "Lq", "L", "P0", "PN" + simbol + Nclientes, "Wq", "W","CT" };
                     double[] valores = { rho, Lq, L,P0val,PN,Wq,W,ctotal};
                     String[] unidades = { "", " clientes", " clientes", "","", " minutos", " minutos", ""," dolares" };
