@@ -85,7 +85,7 @@ namespace ProyectoFilas
                 string[] des = {"Factor de utilización","Clientes esperados en el sistema",
                 "Clientes en el sistema","Probabilidad de que haya cero clientes en el sistema","Probabilidad de que haya n clientes en el sistema",
                     "Tiempo esperado de los clientes en la cola","Tiempo esperado de estancia de" +
-                "los clientes en el sistema","Costo total del servicio"};
+                "los clientes en el sistema"};
                 double LN = double.Parse(lambda.Text);
                 double MN = double.Parse(miu.Text);
                 int Nclientes = int.Parse(clientes.Text);
@@ -127,10 +127,10 @@ namespace ProyectoFilas
                     if (Lq >= 0 && L >= 0)
                 {
                     dataGridView1.Visible = true;
-                    double ctotal = Lq * double.Parse(costocliente.Text) + S*double.Parse(costoservicio.Text);
-                    string[] leyenda = { "ρ", "Lq", "L", "P0", "PN" + simbol + Nclientes, "Wq", "W","CT" };
-                    double[] valores = { rho, Lq, L,P0val,PN,Wq,W,ctotal};
-                    String[] unidades = { "", " clientes", " clientes", "","", " minutos", " minutos", ""," dolares" };
+
+                    string[] leyenda = { "ρ", "Lq", "L", "P0", "PN" + simbol + Nclientes, "Wq", "W" };
+                    double[] valores = { rho, Lq, L,P0val,PN,Wq,W};
+                    String[] unidades = { "", " clientes", " clientes", "","", " minutos", " minutos", "" };
 
                     for (int i = 0; i < leyenda.Length; i++)
                     {
@@ -165,46 +165,6 @@ namespace ProyectoFilas
         }
 
         private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void costoservicio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void costocliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clientes_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
         {
 
         }
