@@ -141,14 +141,15 @@ namespace ProyectoFilas
                 double L = Math.Round(LE * ((Lq / LE) + (1 / MN)), 4);
                 if (Lq >= 0 && L >= 0)
                 {
+                    double ctotal = Lq * double.Parse(costocliente.Text) + S * double.Parse(costoservicio.Text);
                     dataGridView1.Visible = true;
-                    string[] leyenda = { "ρ", "P0", "Pn" + simbol + Nclientes, "Lq", "Le", "Wq", "W", "L" };
-                    double[] valores = { rho, P0val, PN, Lq, LE, Wq, W, L };
+                    string[] leyenda = { "ρ", "P0", "Pn" + simbol + Nclientes, "Lq", "Le", "Wq", "W", "L","CT" };
+                    double[] valores = { rho, P0val, PN, Lq, LE, Wq, W, L,ctotal };
                     string[] des = {"Factor de utilización","Probabilidad de que haya 0 clientes en el sistema", "Probabilidad de que haya n clientes en el sistema",
                         "Número esperado de clientes en la cola", "Tasa de arribos efectiva", "Tiempo esperado de los clientes en la cola",
-                        "Tiempo esperado de estancia de los clientes en el sistema", "Número esperado de clientes en el sistema"
+                        "Tiempo esperado de estancia de los clientes en el sistema", "Número esperado de clientes en el sistema","Costo total del servicio"
                         };
-                    String[] unidades = { "","","", " clientes",""," minutos", " minutos", " clientes" };
+                    String[] unidades = { "","","", " clientes",""," minutos", " minutos", " clientes", " dolares" };
 
 
                     for (int i = 0; i < leyenda.Length; i++)
