@@ -54,7 +54,9 @@ namespace ProyectoFilas
                 double.Parse(lambda.Text) >= 0 && double.Parse(miu.Text) >= 0 &&
                clientes.Text.Any(Char.IsNumber) && int.Parse(clientes.Text) >= 0 &&
                desviacionS.Text.Any(Char.IsNumber) && double.Parse(desviacionS.Text) >= 0
-               && listBox1.SelectedItem != null && distribuciones.SelectedItem != null)
+               && listBox1.SelectedItem != null && distribuciones.SelectedItem != null&&
+                costocliente.Text.Any(Char.IsNumber) && costoservicio.Text.Any(Char.IsNumber) &&
+                double.Parse(costoservicio.Text) >= 0 && double.Parse(costocliente.Text) >= 0)
             {
                 dataGridView1.Rows.Clear();
                 int Nclientes = int.Parse(clientes.Text);
